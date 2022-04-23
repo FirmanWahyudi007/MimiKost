@@ -14,9 +14,28 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('user.home');
 });
 
-Route::get('/tail', function () {
+// User Route
+
+
+
+// Admin & Pemilik Kost Route
+
+Route::prefix('admin')->group(function () {
+
+    Route::get('/', function () {
+        return "Halo admin";
+    });
+
+    Route::get('/users', function () {
+        // Matches The "/admin/users" URL
+    });
+});
+
+
+// ETC Route
+Route::get('/demo', function () {
     return view('demo');
 });
