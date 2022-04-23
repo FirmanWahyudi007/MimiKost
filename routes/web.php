@@ -13,13 +13,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// User Route
 Route::get('/', function () {
     return view('user.home');
-});
+})->name('home');
 
-// User Route
+Route::get('/tempat-kost', function () {
+    return view('user.tempatKost');
+})->name('tempat-kost');
 
+Route::get('/tentang', function () {
+    return view('user.tentang');
+})->name('tentang');
 
+Route::get('/review', function () {
+    return view('user.review');
+})->name('review');
+
+Route::get('/fasilitas', function () {
+    return view('user.fasilitas');
+})->name('fasilitas');
 
 // Admin & Pemilik Kost Route
 
