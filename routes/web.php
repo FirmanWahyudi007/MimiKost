@@ -18,5 +18,5 @@ Route::get('/', function () {
 });
 
 Route::get('/tail', function () {
-    return view('tail');
+    return view('demo');
 });
