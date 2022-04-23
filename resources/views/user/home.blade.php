@@ -19,7 +19,7 @@
             <p>Kami akan membantu anda untuk menemukan rumah singgah secara lebih mudah, praktis, dan menghemat
                 biaya survey.</p>
             <a href="#" class="no-underline">
-                <button class="btn btn-primary bg-coklat border-coklat hover:border-coklat hover:bg-coklat">Pesan Sekarang</button>
+                <button class="btn btn-primary lg:btn-lg bg-coklat border-coklat hover:border-coklat hover:bg-coklat">Pesan Sekarang</button>
             </a>
 
             <div class="h-1 w-32 bg-black my-8"></div>

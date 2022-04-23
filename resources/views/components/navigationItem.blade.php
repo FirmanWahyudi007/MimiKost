@@ -1,19 +1,19 @@
-<li><a href="{{ route('home') }}" {!! (request()->routeIs('home')) ?
-    'class="font-bold"' : '' !!}>
+<li><a href="{{ route('home') }}" class="{!! (request()->routeIs('home')) ?
+    'font-bold' : '' !!}">
     Home</a></li>
 
-<li><a href="{{ route('tempat-kost') }}" {!! (request()->routeIs('tempat-kost')) ?
-    'class="font-bold"' : '' !!}>
+<li><a href="{{ route('tempat-kost') }}" class="{!! (request()->routeIs('tempat-kost')) ?
+    'font-bold' : '' !!}">
     Tempat Kost</a></li>
 
-<li><a href="{{ route('tentang') }}" {!! (request()->routeIs('tentang')) ?
-    'class="font-bold"' : '' !!}>
+<li><a href="{{ route('tentang') }}" class="{!! (request()->routeIs('tentang')) ?
+    'font-bold' : '' !!}">
     Tentang</a></li>
 
-<li><a href="{{ route('review') }}" {!! (request()->routeIs('review')) ?
-    'class="font-bold"' : '' !!}>
+<li><a href="{{ route('review') }}" class="{!! (request()->routeIs('review')) ?
+    'font-bold' : '' !!}">
     Review</a></li>
 
-<li><a href="{{ route('fasilitas') }}" {!! (request()->routeIs('fasilitas')) ?
-    'class="font-bold"' : '' !!}>
+<li><a href="{{ route('fasilitas') }}" class="{!! (request()->routeIs('fasilitas')) ?
+    'font-bold' : '' !!}">
     Fasilitas/Kontak</a></li>
