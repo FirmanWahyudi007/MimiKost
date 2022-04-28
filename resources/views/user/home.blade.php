@@ -13,13 +13,13 @@
             <div class="relative">
                 <h1 class="before:block before:absolute before:-inset-1 before:-z-10 before:bg-white/50 p-0 lg:p-4">
                     Solusi Singgah Untuk Anak Rantau</h1>
-                <div class="absolute w-20 h-20 -top-5 -left-5 -z-20 bg-ungu rounded-full hidden xl:block"></div>
+                <div class="absolute w-20 h-20 -top-5 -left-5 -z-20 bg-primary rounded-full hidden xl:block"></div>
 
             </div>
-            <p>Kami akan membantu anda untuk menemukan rumah singgah secara lebih mudah, praktis, dan menghemat
+            <p class="text-lg lg:text-2xl ">Kami akan membantu anda untuk menemukan rumah singgah secara lebih mudah, praktis, dan menghemat
                 biaya survey.</p>
             <a href="#" class="no-underline">
-                <button class="btn btn-primary lg:btn-lg bg-coklat border-coklat hover:border-coklat hover:bg-coklat">Pesan Sekarang</button>
+                <button class="btn btn-primary lg:btn-lg">Pesan Sekarang</button>
             </a>
 
             <div class="h-1 w-32 bg-black my-8"></div>
@@ -27,7 +27,7 @@
         <div class="p-4 lg:p-0 relative">
             <img src="https://asset.kompas.com/crops/icva5Lwu8mguAdL-ZHNbwHT-eZ0=/0x0:1200x800/750x500/data/photo/2020/10/26/5f96aecd62a38.jpg"
                 alt="">
-            <div class="absolute w-24 h-24 -bottom-8 -right-4 -z-10 bg-ungu hidden xl:block"></div>
+            <div class="absolute w-24 h-24 -bottom-8 -right-4 -z-10 bg-primary hidden xl:block"></div>
         </div>
     </div>
 
@@ -36,7 +36,7 @@
         <div class="hero-content text-center">
             <div class="max-w-md">
                 <h1 class="text-5xl font-bold">Apa Yang Akan Kami Berikan</h1>
-                <p class="py-6 text-lg">Kami akan memberikan pelayanan sepenuh hati
+                <p class="py-6 text-lg lg:text-xl">Kami akan memberikan pelayanan sepenuh hati
                     Bagi kami anak kost seperti anak kami sendiri
                     Orang tua tidak perlu khawatir InshaAllah kami
                     memberikan service terbaik kepada putri - putri
@@ -82,27 +82,27 @@
 </div>
 
 {{-- Footer Hero --}}
-<div class="mt-16 py-16 px-4 bg-ungu">
+<div class="mt-16 py-16 px-4 bg-base-200">
     <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2">
-        <div class="prose p-4 text-white">
-            <h1 class="text-white">Tempat Istirahat Ternyaman Ketika Pulang Ngampus</h1>
+        <div class="prose p-4">
+            <h1 class="">Tempat Istirahat Ternyaman Ketika Pulang Ngampus</h1>
 
             <div class="grid grid-cols-1 lg:grid-cols-2">
                 <div>
-                    <h2 class="text-white">8</h2>
-                    <p>Tipe Rumah Kost</p>
+                    <h2 class="">8</h2>
+                    <p class="text-lg lg:text-2xl">Tipe Rumah Kost</p>
                 </div>
                 <div>
-                    <h2 class="text-white">8</h2>
-                    <p>Kamar Tersedia</p>
+                    <h2 class="">8</h2>
+                    <p class="text-lg lg:text-2xl">Kamar Tersedia</p>
                 </div>
                 <div>
-                    <h2 class="text-white">8</h2>
-                    <p>Kamar Mandi Dalam</p>
+                    <h2 class="">8</h2>
+                    <p class="text-lg lg:text-2xl">Kamar Mandi Dalam</p>
                 </div>
                 <div>
-                    <h2 class="text-white">8</h2>
-                    <p>Kamar Mandi Luar</p>
+                    <h2 class="">8</h2>
+                    <p class="text-lg lg:text-2xl">Kamar Mandi Luar</p>
                 </div>
 
             </div>
