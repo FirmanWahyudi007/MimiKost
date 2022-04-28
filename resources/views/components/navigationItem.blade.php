@@ -10,10 +10,6 @@
     'font-bold' : '' !!}">
     Tentang</a></li>
 
-<li><a href="{{ route('review') }}" class="{!! (request()->routeIs('review')) ?
-    'font-bold' : '' !!}">
-    Review</a></li>
-
 <li><a href="{{ route('fasilitas') }}" class="{!! (request()->routeIs('fasilitas')) ?
     'font-bold' : '' !!}">
     Fasilitas/Kontak</a></li>

@@ -26,10 +26,6 @@ Route::get('/tentang', function () {
     return view('user.tentang');
 })->name('tentang');
 
-Route::get('/review', function () {
-    return view('user.review');
-})->name('review');
-
 Route::get('/fasilitas', function () {
     return view('user.fasilitas');
 })->name('fasilitas');
