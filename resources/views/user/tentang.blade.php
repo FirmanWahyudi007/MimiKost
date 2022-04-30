@@ -38,7 +38,7 @@ Mimi Kost | Tentang
     </div>
 </div>
 
-<div class="h-1 w-32 bg-black my-8 mx-auto"></div>
+@include('components.divider')
 
 <div class="container mx-auto my-8 grid grid-cols-1 md:grid-cols-2 gap-4 ">
     <div class="p-4 lg:p-8">

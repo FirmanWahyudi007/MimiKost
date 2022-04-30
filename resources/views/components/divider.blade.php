@@ -1,0 +1,1 @@
+<div class="h-1 w-32 bg-black my-8 mx-auto" id="divider"></div>

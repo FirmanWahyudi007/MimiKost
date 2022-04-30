@@ -26,9 +26,9 @@ Route::get('/tentang', function () {
     return view('user.tentang');
 })->name('tentang');
 
-Route::get('/fasilitas', function () {
-    return view('user.fasilitas');
-})->name('fasilitas');
+Route::get('/kontak', function () {
+    return view('user.kontak');
+})->name('kontak');
 
 // Admin & Pemilik Kost Route
 

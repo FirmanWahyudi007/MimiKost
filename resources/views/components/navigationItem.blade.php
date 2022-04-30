@@ -4,12 +4,12 @@
 
 <li><a href="{{ route('tempat-kost') }}" class="{!! (request()->routeIs('tempat-kost')) ?
     'font-bold' : '' !!}">
-    Tempat Kost</a></li>
+    Kostan</a></li>
 
 <li><a href="{{ route('tentang') }}" class="{!! (request()->routeIs('tentang')) ?
     'font-bold' : '' !!}">
     Tentang</a></li>
 
-<li><a href="{{ route('fasilitas') }}" class="{!! (request()->routeIs('fasilitas')) ?
+<li><a href="{{ route('kontak') }}" class="{!! (request()->routeIs('kontak')) ?
     'font-bold' : '' !!}">
-    Fasilitas/Kontak</a></li>
+    Kontak</a></li>
