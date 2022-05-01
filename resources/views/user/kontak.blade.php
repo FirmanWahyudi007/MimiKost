@@ -137,9 +137,6 @@ Mimi Kost | Kontak
 
 </div>
 
-
-
-
 {{-- Footer --}}
 <div class="w-full bg-neutral">
     @include('components.footer')
