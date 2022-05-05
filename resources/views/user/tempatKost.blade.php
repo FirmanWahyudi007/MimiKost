@@ -1,3 +1,4 @@
+{{-- ! Jangan Dihapus, backup styling dekstop --}}
 @extends('layouts.user')
 
 @section('title')
@@ -15,7 +16,7 @@ Mimi Kost | Tempat Kost
 <div class="container mx-auto ">
     <div class="grid grid-cols-1 lg:grid-cols-10 gap-8 p-4">
         {{-- Maps --}}
-        <div class="lg:col-span-3 h-screen static lg:sticky top-0">
+        <div class="lg:col-span-3 h-screen static lg:sticky top-0 -z-10">
             <div id="map" class="h-full rounded-lg"></div>
         </div>
 

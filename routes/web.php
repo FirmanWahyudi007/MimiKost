@@ -19,7 +19,7 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/tempat-kost', function () {
-    return view('user.tempatKost');
+    return view('user.tempatKostMobile');
 })->name('tempat-kost');
 
 Route::get('/tentang', function () {
