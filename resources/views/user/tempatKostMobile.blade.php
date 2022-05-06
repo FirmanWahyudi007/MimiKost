@@ -15,7 +15,6 @@ Mimi Kost | Tempat Kost
 <div class="container mx-auto ">
     <div class="relative lg:grid lg:grid-cols-3 lg:gap-4 lg:p-2">
         {{-- Maps --}}
-
         <div class="relative h-[85vh] w-full lg:h-screen lg:sticky lg:top-0">
             <div id="map" class="relative w-full h-full -z-0"></div>
         </div>
@@ -42,8 +41,17 @@ Mimi Kost | Tempat Kost
         {{-- Dekstop Item View --}}
         <div class="hidden lg:block lg:col-span-2">
 
-            <div id="filter" class="hidden lg:block bg-white p-2 rounded-lg lg:col-span-2 mb-4">
-                @include('user.tempatKostFilter')
+            {{-- Filter Collapse --}}
+            <div tabindex="0" class="collapse collapse-arrow bg-white rounded-lg lg:col-span-2 mb-4">
+                <input type="checkbox" class="peer" />
+                <div
+                    class="collapse-title text-lg font-medium">
+                    Filter
+                </div>
+                <div
+                    class="collapse-content">
+                    @include('user.tempatKostFilter')
+                </div>
             </div>
 
             {{-- List --}}
