@@ -22,6 +22,10 @@ Route::get('/tempat-kost', function () {
     return view('user.tempatKostMobile');
 })->name('tempat-kost');
 
+Route::get('/tempat-kost/view', function () {
+    return view('user.tempatKostView');
+})->name('tempat-kost-view');
+
 Route::get('/tentang', function () {
     return view('user.tentang');
 })->name('tentang');
