@@ -113,7 +113,7 @@ Mimi Kost | Alamat Tempat Kost
     <div id="list" class="gap-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-4 m-4">
         @for ($i = 1; $i < 8; $i++) <a href="{{ route('tempat-kost-view') }}">
             <div class="card card-compact bg-base-100 shadow-sm" style="min-width: 180px">
-                <figure><img src="https://api.lorem.space/image/shoes?w=400&h=225" alt="Shoes" class="" />
+                <figure class="w-full h-56 bg-center bg-cover" style="background-image: url('https://api.lorem.space/image/shoes')">
                 </figure>
                 <div class="card-body">
                     <h3 class="text-xs">Lorem Ipsum</h3>
