@@ -3266,6 +3266,18 @@ body[dir="rtl"] .checkbox:checked,
     bottom: 0px;
   }
 
+  .lg\:right-0 {
+    right: 0px;
+  }
+
+  .lg\:left-0 {
+    left: 0px;
+  }
+
+  .lg\:-bottom-14 {
+    bottom: -3.5rem;
+  }
+
   .lg\:z-10 {
     z-index: 10;
   }
@@ -3308,6 +3320,14 @@ body[dir="rtl"] .checkbox:checked,
 
   .lg\:-m-10 {
     margin: -2.5rem;
+  }
+
+  .lg\:m-10 {
+    margin: 2.5rem;
+  }
+
+  .lg\:m-14 {
+    margin: 3.5rem;
   }
 
   .lg\:mx-auto {
