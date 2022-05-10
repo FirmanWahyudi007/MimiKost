@@ -11,7 +11,7 @@
     <div class="grid grid-cols-1 lg:grid-cols-2 mt-8 content-end">
         <div class="prose p-4">
             <div class="relative">
-                <h1 class="before:block before:absolute before:-inset-1 before:-z-10 before:bg-white/50 p-0 lg:p-4">
+                <h1 class="before:hidden before:xl:block before:absolute before:-inset-1 before:-z-10 before:bg-white/50 p-0 lg:p-4">
                     Solusi Singgah Untuk Anak Rantau</h1>
                 <div class="absolute w-20 h-20 -top-5 -left-5 -z-20 bg-primary rounded-full hidden xl:block"></div>
 

@@ -21,6 +21,11 @@ Mimi Kost | Tentang
 <div class="h-1 w-32 bg-black my-8 mx-auto"></div>
 
 <div class="container mx-auto my-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div class="p-4 lg:p-8 lg:order-last">
+        <img class="w-full rounded-lg"
+            src="https://binabangunbangsa.com/wp-content/uploads/2020/03/tips-Manajemen-Rumah-Kost-yang-Baik-dan-Benar-.jpg"
+            alt="">
+    </div>
     <div class="p-8 prose">
         <h1>Mimi Kost</h1>
         <p class="text-lg lg:text-xl">Mimi Kost merupakan website yang mengelola dan menyajikan daftar kos dengan
@@ -30,11 +35,6 @@ Mimi Kost | Tentang
         <p class="text-lg lg:text-xl">
             Mamikos berusaha untuk bisa terus menyajikan data ketersediaan kamar yang akurat, agar calon penghuni
             mendapatkan kemudahan dalam pencarian kos.</p>
-    </div>
-    <div class="p-4 lg:p-8">
-        <img class="w-full rounded-lg"
-            src="https://binabangunbangsa.com/wp-content/uploads/2020/03/tips-Manajemen-Rumah-Kost-yang-Baik-dan-Benar-.jpg"
-            alt="">
     </div>
 </div>
 

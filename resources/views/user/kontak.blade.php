@@ -63,7 +63,8 @@ Mimi Kost | Kontak
                 </div>
             </div>
 
-            <img src="{{ asset('images/whir-whil-thingy.png') }}" alt="" class="absolute w-72 h-64 -right-1/4 -bottom-1/4">
+            <img src="{{ asset('images/whir-whil-thingy.png') }}" alt=""
+                class="absolute w-72 h-64 -right-1/4 -bottom-1/4">
         </div>
 
         {{-- Form Kontak --}}
@@ -84,7 +85,7 @@ Mimi Kost | Kontak
                     </label> --}}
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-2 mt-4">
+                <div class="grid gap-x-4 grid-cols-1 lg:grid-cols-2 mt-4">
                     <div class="form-control w-full max-w-xs">
                         <label class="label">
                             <span class="label-text">Email</span>
@@ -116,8 +117,15 @@ Mimi Kost | Kontak
                     <label class="label">
                     </label>
                 </div>
-                
-                <button type="submit" class="btn btn-primary w-full">Kirim Pesan 📧</button>
+
+                <button type="submit" class="btn btn-primary w-full hover:text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />
+                    </svg>
+                    Kirim Pesan
+                </button>
             </form>
         </div>
 
