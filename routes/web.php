@@ -26,6 +26,10 @@ Route::get('/tempat-kost/view', function () {
     return view('user.tempatKostView');
 })->name('tempat-kost-view');
 
+Route::get('/kamar-kost', function () {
+    return view('user.KamarKost');
+})->name('kamar-kost');
+
 Route::get('/tentang', function () {
     return view('user.tentang');
 })->name('tentang');

@@ -7,7 +7,7 @@ Mimi Kost | Tentang
 @section('body')
 
 <section class="pt-8 pb-4 px-8">
-    <div class="hero rounded-3xl" style="background-image: url(https://api.lorem.space/image/fashion?w=1000&h=800); min-height: 80vh">
+    <div class="hero rounded-3xl" style="background-image: url(https://api.lorem.space/image/house?w=1000&h=800); min-height: 80vh">
         <div class="hero-overlay bg-opacity-60 rounded-3xl"></div>
         <div class="hero-content text-center text-neutral-content">
             <div class="max-w-md">

@@ -17,11 +17,11 @@ Mimi Kost | Alamat Tempat Kost
         {{-- Swiper --}}
 
         <div id="swiper" class="bg-blue-200 m-4 h-[30vh] lg:h-[40vh]">
-            <div class="bg-center bg-cover" style="background-image: url(https://api.lorem.space/image/shoes);">
+            <div class="bg-center bg-cover" style="background-image: url(https://api.lorem.space/image/house);">
             </div>
-            <div class="bg-center bg-cover" style="background-image: url(https://api.lorem.space/image/shoes);">
+            <div class="bg-center bg-cover" style="background-image: url(https://api.lorem.space/image/house);">
             </div>
-            <div class="bg-center bg-cover" style="background-image: url(https://api.lorem.space/image/shoes);">
+            <div class="bg-center bg-cover" style="background-image: url(https://api.lorem.space/image/house);">
             </div>
         </div>
 
@@ -111,9 +111,9 @@ Mimi Kost | Alamat Tempat Kost
     @include('components.divider')
 
     <div id="list" class="gap-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-4 m-4">
-        @for ($i = 1; $i < 8; $i++) <a href="{{ route('tempat-kost-view') }}">
+        @for ($i = 1; $i < 8; $i++) <a href="{{ route('kamar-kost') }}">
             <div class="card card-compact bg-base-100 shadow-sm" style="min-width: 180px">
-                <figure class="w-full h-56 bg-center bg-cover" style="background-image: url('https://api.lorem.space/image/shoes')">
+                <figure class="w-full h-56 bg-center bg-cover" style="background-image: url('https://api.lorem.space/image/house')">
                 </figure>
                 <div class="card-body">
                     <h3 class="text-xs">Lorem Ipsum</h3>
