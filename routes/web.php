@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\TempatKostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 
 // User Route
 Route::get('/', function () {
@@ -42,9 +45,8 @@ Route::get('/kontak', function () {
 
 Route::prefix('admin')->group(function () {
 
-    Route::get('/', function () {
-        return "Halo admin";
-    });
+    Route::resource('/', DashboardController::class);
+    Route::resource('/tempat', TempatKostController::class);
 
     Route::get('/users', function () {
         // Matches The "/admin/users" URL
