@@ -5,17 +5,17 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class TempatKostController extends Controller
+class KamarController extends Controller
 {
     public function index()
     {
         # code...
-        return view('admin.tempat.index');
+        return view('admin.kamar.index');
     }
 
     public function create()
     {
         # code...
-        return view('admin.tempat.create');
+        return view('admin.kamar.create');
     }
 }

@@ -9,6 +9,12 @@
         <!-- header -->
         <div class="card-header flex flex-row justify-between">
             <h1 class="h6">Tempat Kost</h1>
+            <div class="flex flex-row justify-center items-center">
+
+            <a href="{{route('tempat.create')}}" class="btn-bs-primary">
+                Create
+            </a>
+        </div>
         </div>
         <!-- end header -->
 
@@ -17,26 +23,19 @@
             <table class="table-fixed">
                 <thead>
                     <tr>
-                    <th>Song</th>
-                    <th>Artist</th>
-                    <th>Year</th>
+                    <th>Lokasi</th>
+                    <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                    <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
-                    <td>Malcolm Lockyer</td>
-                    <td>1961</td>
-                    </tr>
-                    <tr>
-                    <td>Witchy Woman</td>
-                    <td>The Eagles</td>
-                    <td>1972</td>
-                    </tr>
-                    <tr>
-                    <td>Shining Star</td>
-                    <td>Earth, Wind, and Fire</td>
-                    <td>1975</td>
+                        <td>Tidar 1</td>
+                        <td>
+                            {{-- <div class="grid grid-cols-3"> --}}
+                                <a href="#" class="btn-bs-info">Update</a>
+                                <a href="#" class="btn-bs-danger">Delete</a>
+                            </div>
+                        </td>
                     </tr>
                 </tbody>
                 </table>

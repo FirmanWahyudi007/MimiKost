@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\KamarController;
 use App\Http\Controllers\Admin\TempatKostController;
 use Illuminate\Support\Facades\Route;
 
@@ -47,6 +48,7 @@ Route::prefix('admin')->group(function () {
 
     Route::resource('/', DashboardController::class);
     Route::resource('/tempat', TempatKostController::class);
+    Route::resource('/kamar', KamarController::class);
 
     Route::get('/users', function () {
         // Matches The "/admin/users" URL
