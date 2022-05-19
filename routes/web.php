@@ -50,6 +50,15 @@ Route::prefix('admin')->group(function () {
     Route::resource('/tempat', TempatKostController::class);
     Route::resource('/kamar', KamarController::class);
 
+    // Auth
+    Route::get('/login', function () {
+        return view('admin.auth.login');
+    });
+
+    Route::get('/reset-password', function () {
+        return view('admin.auth.resetPassword');
+    });
+
     Route::get('/users', function () {
         // Matches The "/admin/users" URL
     });
