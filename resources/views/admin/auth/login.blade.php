@@ -12,7 +12,11 @@
 </head>
 
 <body>
-
+    @if (session()->has('status'))
+        <div style="color:red;">
+            {{ session('status') }}
+        </div>
+    @endif
     <div class="container mx-auto grid h-screen place-items-center">
         <div class="card w-72 lg:w-96 max-w-full bg-base-100 shadow-xl">
             <div class="avatar mx-auto">
@@ -21,24 +25,25 @@
                 </div>
             </div>
             <div class="card-body">
-                <form action="">
+                <form action="{{route('login.store')}}" method="POST">
+                    {{ csrf_field() }}
                     <div class="form-control w-full">
                         <label class="label">
                             <span class="label-text">Email</span>
                         </label>
-                        <input type="email" placeholder="Email" class="input input-bordered w-full" />
-                        <label class="label">
+                        <input type="email" placeholder="Email" class="input input-bordered w-full" name="email" />
+                        {{-- <label class="label">
                             <span class="label-text-alt text-red-600">Error</span>
-                        </label>
+                        </label> --}}
                     </div>
                     <div class="form-control w-full">
                         <label class="label">
                             <span class="label-text">Passsword</span>
                         </label>
-                        <input type="password" placeholder="Password" class="input input-bordered w-full" />
-                        <label class="label">
+                        <input type="password" placeholder="Password" class="input input-bordered w-full" name="password" />
+                        {{-- <label class="label">
                             <span class="label-text-alt text-red-600">Error</span>
-                        </label>
+                        </label> --}}
                     </div>
                     <a href="#" class="float-right block mb-2 text-blue-400 underline">Lupa password?</a>
                     <div class="form-control w-full">

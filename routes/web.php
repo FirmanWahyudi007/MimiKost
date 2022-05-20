@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\KamarController;
 use App\Http\Controllers\Admin\TempatKostController;
+use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,20 +45,14 @@ Route::get('/kontak', function () {
 
 // Admin & Pemilik Kost Route
 
+    // Auth
+    // Route::resource('/login', LoginController::class);
 Route::prefix('admin')->group(function () {
 
     Route::resource('/', DashboardController::class);
     Route::resource('/tempat', TempatKostController::class);
     Route::resource('/kamar', KamarController::class);
 
-    // Auth
-    Route::get('/login', function () {
-        return view('admin.auth.login');
-    });
-
-    Route::get('/reset-password', function () {
-        return view('admin.auth.resetPassword');
-    });
 
     Route::get('/users', function () {
         // Matches The "/admin/users" URL
@@ -69,3 +64,9 @@ Route::prefix('admin')->group(function () {
 Route::get('/demo', function () {
     return view('demo');
 });
+
+require __DIR__.'/auth.php';
+
+require __DIR__.'/auth.php';
+
+require __DIR__.'/auth.php';
