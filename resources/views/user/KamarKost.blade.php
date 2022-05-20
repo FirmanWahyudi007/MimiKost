@@ -11,7 +11,7 @@ Mimi Kost | Alamat Kamar Kost
 @endsection
 
 @section('body')
-<div class="container mx-auto ">
+<div class="container mx-auto xl:p-6">
 
     {{-- Swiper --}}
     <div id="swiper" class="bg-blue-200 m-4 h-[30vh] lg:h-[40vh]">
