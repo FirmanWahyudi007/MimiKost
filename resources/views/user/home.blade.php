@@ -5,7 +5,7 @@
 @endsection
 
 @section('body')
-<div class="container mx-auto">
+<div class="container mx-auto sm:px-6">
 
     {{-- Hero --}}
     <div class="grid grid-cols-1 lg:grid-cols-2 mt-8 content-end">
@@ -82,7 +82,7 @@
 </div>
 
 {{-- Footer Hero --}}
-<div class="mt-16 py-16 px-4 bg-base-200">
+<div class="mt-16 py-16 px-4 sm:px-6 bg-base-200">
     <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2">
         <div class="prose p-4">
             <h1 class="">Tempat Istirahat Ternyaman Ketika Pulang Ngampus</h1>
