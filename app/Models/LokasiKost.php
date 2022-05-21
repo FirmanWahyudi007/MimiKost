@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class LokasiKost extends Model
 {
     use HasFactory;
+    protected $table = 'lokasi_kosts';
+    protected $PrimaryKey = 'id';
+    protected $fillable = [
+        'lokasi_tempat',
+    ];
 }
