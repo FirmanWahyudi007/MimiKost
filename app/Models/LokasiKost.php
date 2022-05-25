@@ -13,4 +13,10 @@ class LokasiKost extends Model
     protected $fillable = [
         'lokasi_tempat',
     ];
+
+    public function kamarkost()
+    {
+        # code...
+        $this->hasMany(KamarKost::class);
+    }
 }

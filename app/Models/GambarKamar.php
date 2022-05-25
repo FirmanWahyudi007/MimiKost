@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class GambarKamar extends Model
 {
     use HasFactory;
+    protected $table = 'gambar_kamars';
+    protected $PrimaryKey = 'id';
+    protected $fillable = [
+        'kamar_kost_id',
+        'path',
+    ];
 }

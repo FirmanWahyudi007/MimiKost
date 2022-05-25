@@ -47,7 +47,7 @@ Route::get('/kontak', function () {
 
     // Auth
     // Route::resource('/login', LoginController::class);
-Route::prefix('admin')->group(function () {
+Route::prefix('admin')->middleware('auth')->group(function () {
 
     Route::resource('/', DashboardController::class);
     Route::resource('/tempat', TempatKostController::class);
@@ -64,9 +64,5 @@ Route::prefix('admin')->group(function () {
 Route::get('/demo', function () {
     return view('demo');
 });
-
-require __DIR__.'/auth.php';
-
-require __DIR__.'/auth.php';
 
 require __DIR__.'/auth.php';

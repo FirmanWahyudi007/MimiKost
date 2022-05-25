@@ -15,8 +15,11 @@ return new class extends Migration
     {
         Schema::create('gambar_kamars', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_kamar');
             $table->string('path');
+            $table->foreignId('kamar_kost_id')
+                ->on('kamar_kosts')
+                ->onUpdate('cascade')
+                ->onDelete('cascaed');
             $table->timestamps();
         });
     }

@@ -19,7 +19,11 @@ return new class extends Migration
             $table->integer('jumlah');
             $table->integer('harga');
             $table->text('peraturan');
-            $table->integer('id_lokasi');
+            $table->text('fasilitas');
+            $table->foreignId('lokasi_kost_id')
+                ->on('lokasi_kosts')
+                ->onUpdate('cascade')
+                ->onDelete('cascaed');
             $table->timestamps();
         });
     }
