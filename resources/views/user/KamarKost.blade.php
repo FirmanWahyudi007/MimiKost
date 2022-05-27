@@ -15,12 +15,10 @@ Mimi Kost | Alamat Kamar Kost
 
     {{-- Swiper --}}
     <div id="swiper" class="bg-blue-200 m-4 h-[30vh] lg:h-[40vh]">
-        <div class="bg-center bg-cover" style="background-image: url(https://api.lorem.space/image/house);">
-        </div>
-        <div class="bg-center bg-cover" style="background-image: url(https://api.lorem.space/image/house);">
-        </div>
-        <div class="bg-center bg-cover" style="background-image: url(https://api.lorem.space/image/house);">
-        </div>
+        @foreach ($kamar->gambarkamars as $gambarKamar)
+            <div class="bg-center bg-cover" style="background-image: url({{asset('storage/'.$gambarKamar->path)}});">
+            </div>
+        @endforeach
     </div>
 
     <div class="grid grid-cols-1 mx-4 lg:grid-cols-3">
@@ -36,7 +34,7 @@ Mimi Kost | Alamat Kamar Kost
                     </svg>
                 </div>
                 <div class="stat-title">Harga</div>
-                <div class="stat-value text-primary">25.6K</div>
+                <div class="stat-value text-primary">{{ $kamar->harga }}</div>
                 <div class="stat-desc">Per bulan</div>
             </div>
         </div>
@@ -44,60 +42,30 @@ Mimi Kost | Alamat Kamar Kost
         {{-- Isi --}}
         <div class="bg-base-100 my-4 rounded-xl p-2 gap-4 lg:order-first lg:col-span-2 lg:row-span-3">
             {{-- Judul --}}
-            <div class="text-3xl font-bold">Judul</div>
-            <div class="text-gray-600 ">sub judul</div>
+            <div class="text-3xl font-bold">{{ $kamar->nama }}</div>
 
             {{-- Fasilitas --}}
             <div class="flex gap-4 w-full overflow-x-auto mt-6">
-                <div class="flex gap-2">
-                    <div class="hidden">Judul</div>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-                    </svg>
-                    <div>10</div>
-                </div>
-
-                <div class="flex gap-2">
-                    <div class="hidden">Judul</div>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-                    </svg>
-                    <div>10</div>
-                </div>
-
-                <div class="flex gap-2">
-                    <div class="hidden">Judul</div>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-                    </svg>
-                    <div>10</div>
-                </div>
+                @foreach ($kamar->fasilitas as $fasilitas)
+                    <div class="flex gap-2">
+                        <div class="hidden">Judul</div>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                        </svg>
+                        <div>{{ $fasilitas }}</div>
+                    </div>
+                @endforeach
 
             </div>
 
             @include('components.divider')
 
-            {{-- Deskripsi --}}
-            <div class="text-xl font-bold mb-2">Deskripsi</div>
-            <div class="prose">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, consequuntur rerum! Excepturi officia
-                    libero doloremque quis. Nesciunt debitis qui, fuga voluptate tempora a nisi, consequatur temporibus
-                    aspernatur incidunt est perspiciatis!</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, consequuntur rerum! Excepturi officia
-                    libero doloremque quis. Nesciunt debitis qui, fuga voluptate tempora a nisi, consequatur temporibus
-                    aspernatur incidunt est perspiciatis!</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, consequuntur rerum! Excepturi officia
-                    libero doloremque quis. Nesciunt debitis qui, fuga voluptate tempora a nisi, consequatur temporibus
-                    aspernatur incidunt est perspiciatis!</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, consequuntur rerum! Excepturi officia
-                    libero doloremque quis. Nesciunt debitis qui, fuga voluptate tempora a nisi, consequatur temporibus
-                    aspernatur incidunt est perspiciatis!</p>
+            {{-- Peraturan --}}
+            <div class="text-xl font-bold mb-2">Peraturan</div>
+            <div class="prose mb-4">
+                {{ $kamar->peraturan }}
 
             </div>
         </div>

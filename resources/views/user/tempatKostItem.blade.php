@@ -1,15 +1,16 @@
-@for ($i = 1; $i < 8; $i++)
-<a href="{{ route('tempat-kost-view') }}">
+@foreach ($tempatKosts as $tempatKost)
+<a href="{{ route('tempat-kost-view', $tempatKost->id) }}">
     <div class="card card-compact bg-base-100 shadow-sm" style="min-width: 180px">
         <figure><img src="https://api.lorem.space/image/shoes?w=400&h=225" alt="Shoes" class="" />
         </figure>
         <div class="card-body">
-            <h3 class="text-xs">Lorem Ipsum</h3>
-            <h2 class="card-title text-sm">Lorem Ipsum!</h2>
-    
+            {{-- <h3 class="text-xs">Lorem Ipsum</h3> --}}
             <div class="h-px w-full block bg-gray-400 my-1"></div>
+
+            <h2 class="card-title">{{ $tempatKost->lokasi_tempat }}</h2>
     
-            <div id="desc" class="flex gap-4">
+    
+            {{-- <div id="desc" class="flex gap-4">
                 <div class="flex gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -31,9 +32,9 @@
             <div class="h-px w-full hidden lg:block bg-gray-400 my-4"></div>
     
             <h3 class="text-sm hidden lg:block">Lorem Ipsum</h3>
-            <h2 class="card-title hidden lg:block">Lorem Ipsum!</h2>
+            <h2 class="card-title hidden lg:block">Lorem Ipsum!</h2> --}}
     
         </div>
     </div>
 </a>
-@endfor
+@endforeach
