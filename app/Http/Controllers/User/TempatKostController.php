@@ -22,12 +22,18 @@ class TempatKostController extends Controller
     public function show($id){
 
         $tempat = LokasiKost::where('id', $id)->first();
-
         $kamars = KamarKost::with('gambarkamar')->where('lokasi_kost_id', $id)->get();
+        $fasilitas_all = KamarKost::select('fasilitas')->where('lokasi_kost_id', $id)->get();
+        $fasilitas_unique = [];
+
+        foreach ($fasilitas_all as $item) {
+            $fasilitas_unique = array_unique(array_merge($fasilitas_unique, $item['fasilitas']));
+        }
 
         return view('user.tempatKostView', [
             'tempat' => $tempat,
             'kamars' => $kamars,
+            'fasilitas_unique' => $fasilitas_unique
         ]);
     }
 
