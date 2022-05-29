@@ -17,6 +17,7 @@ class LokasiKost extends Model
     public function kamarkost()
     {
         # code...
-        $this->hasMany(KamarKost::class);
+        return $this->hasMany(KamarKost::class);
     }
+    
 }

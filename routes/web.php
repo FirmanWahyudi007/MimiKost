@@ -26,7 +26,7 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/tempat-kost', [TempatKostUser::class, 'index'])->name('tempat-kost');
-
+Route::get('/tempat-kost-item', [TempatKostUser::class, 'listFilter'])->name('tempat-kost-item');
 Route::get('/tempat-kost/view/{id}', [TempatKostUser::class, 'show'])->name('tempat-kost-view');
 
 Route::get('/kamar-kost/{id}', [KamarKostController::class, 'index'])->name('kamar-kost');
