@@ -9,6 +9,12 @@ use App\Http\Controllers\Controller;
 
 class KamarKostController extends Controller
 {
+    /**
+     * Menampilkan kamar kost
+     *
+     * @param [int] $id
+     * @return void
+     */
     public function index($id){
 
         $kamar = KamarKost::with('gambarkamars')->where('id', $id)->first();

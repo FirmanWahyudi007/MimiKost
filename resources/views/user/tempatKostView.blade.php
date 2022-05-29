@@ -59,10 +59,8 @@ Mimi Kost | Alamat Tempat Kost
         </div>
     </div>
 
-
-
-
     @if ($kamars->isEmpty())
+    {{-- Peringatan tidak ada kamar --}}
     <div class="card lg:w-[30vw] bg-primary text-primary-content m-4 lg:m-14">
         <div class="card-body">
             <h2 class="card-title">Maaf, kamar belum tersedia pada tempat ini</h2>

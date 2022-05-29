@@ -102,6 +102,7 @@ Mimi Kost | Tempat Kost
 
     </div>
 
+    {{-- Tempat menyimpan value form filter --}}
     <input type="hidden" placeholder="..." id="maxHarga"/>
     <input type="hidden" placeholder="..." id="minHarga"/>
 
@@ -156,11 +157,6 @@ Mimi Kost | Tempat Kost
     });
 
     // Script untuk Filter
-
-    // $( document ).ready(function() {
-    //     $("#listMobileItem").load("{{ route('tempat-kost-item') }}");
-    // });
-
     $('body').on('click', '#filter', function () {
         
         var tipe = $('#urutkan').val();

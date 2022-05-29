@@ -2,6 +2,7 @@
     Filter
 </div>
 <div>
+    {{-- Form filter --}}
     <div class="mb-2 grid grid-cols grid-cols-2 gap-4">
         <div class="form-control w-full">
             <label class="label">
@@ -15,7 +16,6 @@
             </label>
             <input type="number" placeholder="..." class="input input-bordered w-full max-harga" name="max_harga"/>
         </div>
-
     </div>
 
     <button class="btn btn-primary text-white" type="button" id="filter">Terapkan</button>

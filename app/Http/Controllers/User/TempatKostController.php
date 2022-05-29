@@ -10,7 +10,11 @@ use App\Http\Controllers\Controller;
 
 class TempatKostController extends Controller
 {
-    // Default View
+    /**
+     * Menampilkan list tempat kost beserta harga kamar termurah dan termahal
+     *
+     * @return View
+     */
     public function index(){
 
         $tempatKosts = DB::table('lokasi_kosts')->select('lokasi_kosts.*', 
@@ -27,6 +31,12 @@ class TempatKostController extends Controller
         ]);
     }
 
+    /**
+     * Menampilkan list kamar yang ada pada tempat kosts
+     *
+     * @param [int] $id
+     * @return View
+     */
     public function show($id){
 
         $tempat = LokasiKost::where('id', $id)->first();
@@ -45,6 +55,13 @@ class TempatKostController extends Controller
         ]);
     }
 
+    /**
+     * Sama seperti fungsi index, tetapi dengan filter
+     * Ini digunakan untuk fungsi jquery agar tidak perlu reload
+     *
+     * @param Request $request
+     * @return View
+     */
     public function listFilter(Request $request){
         
         $urut = $request->urut;

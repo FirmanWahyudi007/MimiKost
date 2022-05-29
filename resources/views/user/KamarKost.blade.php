@@ -24,7 +24,6 @@ Mimi Kost | Alamat Kamar Kost
     <div class="grid grid-cols-1 mx-4 lg:grid-cols-3">
         {{-- Harga --}}
         <div class="stats shadow">
-
             <div class="stat">
                 <div class="stat-figure text-primary">
                     <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" class="h-8 w-8"
@@ -57,7 +56,6 @@ Mimi Kost | Alamat Kamar Kost
                         <div>{{ $fasilitas }}</div>
                     </div>
                 @endforeach
-
             </div>
 
             @include('components.divider')
@@ -66,7 +64,6 @@ Mimi Kost | Alamat Kamar Kost
             <div class="text-xl font-bold mb-2">Peraturan</div>
             <div class="prose mb-4">
                 {{ $kamar->peraturan }}
-
             </div>
         </div>
 
@@ -74,18 +71,19 @@ Mimi Kost | Alamat Kamar Kost
         <div class="w-full my-4 lg:sticky top-5">
             <div class="card w-full bg-base-100 shadow-xl">
                 <div class="card-body">
+                    
                     <div class="avatar mx-auto">
                         <div class="w-24 rounded-full">
                             <img src="https://api.lorem.space/image/face?hash=92310" />
                         </div>
                     </div>
+
                     <div class="text-center">
                         <p class="text-gray-800">Pemilik</p>
                         <div class="text-xl font-bold">Ibu Mimi</div>
                     </div>
 
                     <div class="stats shadow">
-
                         <a href="http://wa.me/+6281333444651" target="_blank">
                             <div class="stat">
                                 <div class="stat-figure text-primary">
@@ -99,8 +97,8 @@ Mimi Kost | Alamat Kamar Kost
                                 <div class="text-lg text-primary">+62 813-3344-4561</div>
                             </div>
                         </a>
-
                     </div>
+
                 </div>
             </div>
         </div>
