@@ -48,6 +48,8 @@ class TempatKostController extends Controller
     public function listFilter(Request $request){
         
         $urut = $request->urut;
+        $maxHarga = $request->maxHarga;
+        $minHarga = $request->minHarga;
 
         $tempatKosts = DB::table('lokasi_kosts')->select('lokasi_kosts.*', 
             DB::raw('(SELECT kamar_kosts.harga from kamar_kosts 
@@ -59,6 +61,12 @@ class TempatKostController extends Controller
             )
             ->when($urut, function ($query, $urut) {
                 return $query->orderBy('kamar_termurah', $urut);
+            })
+            ->when($maxHarga, function ($query, $maxHarga) {
+                return $query->havingRaw("kamar_termurah < $maxHarga");
+            })
+            ->when($minHarga, function ($query, $minHarga) {
+                return $query->havingRaw("kamar_termurah > $minHarga");
             })
             ->get();
 

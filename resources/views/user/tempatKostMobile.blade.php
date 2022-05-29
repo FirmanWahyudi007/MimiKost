@@ -28,7 +28,7 @@ Mimi Kost | Tempat Kost
             </svg>
         </label>
 
-        {{-- Filter Modal--}}
+        {{-- Filter Modal --}}
         <input type="checkbox" id="my-modal-3" class="modal-toggle">
         <div class="modal">
             <div class="modal-box">
@@ -42,7 +42,7 @@ Mimi Kost | Tempat Kost
         <div class="hidden lg:block lg:col-span-2">
 
             {{-- Filter Collapse --}}
-            <div tabindex="0" class="collapse collapse-arrow bg-white rounded-lg lg:col-span-2 mb-4">
+            <div tabindex="0" class="collapse collapse-open collapse-arrow bg-white rounded-lg lg:col-span-2 mb-4">
                 <input type="checkbox" class="peer" />
                 <div
                     class="collapse-title text-lg font-medium">
@@ -95,12 +95,15 @@ Mimi Kost | Tempat Kost
         <div id="listMobile" class="lg:bg-white p-2 rounded-lg max-w-full absolute bottom-0 lg:hidden lg:col-span-2">
 
             {{-- Gallery View --}}
-            <div class="flex gap-2 overflow-x-auto lg:grid lg:grid-cols-3 lg:gap-4">
+            <div id="listItem" class="flex gap-2 overflow-x-auto lg:grid lg:grid-cols-3 lg:gap-4">
                 @include('user.tempatKostItem')
             </div>
         </div>
 
     </div>
+
+    <input type="hidden" placeholder="..." id="maxHarga"/>
+    <input type="hidden" placeholder="..." id="minHarga"/>
 
 </div>
 
@@ -138,13 +141,44 @@ Mimi Kost | Tempat Kost
     $("#urutkan").on('change',function(){
 
         var tipe = $('#urutkan').val();
-        var data = "urut=" + tipe;
+        var maxHarga = $('#maxHarga').val();
+        var minHarga = $('#minHarga').val();
+
+        var data = "maxHarga=" + maxHarga + "&";
+        data += "minHarga=" + minHarga + "&";
+        data += "urut=" + tipe;
 
         // var data = "tipe=" + tipe + "&";
         // data += "sertifikasi=" + sertifikasi + "&";
         // data += "region=" + region;
 
         $("#listItem").load("{{ route('tempat-kost-item') }}", data);
+    });
+
+    // Script untuk sorting
+    $('body').on('click', '#filter', function () {
+        
+        var tipe = $('#urutkan').val();
+        var maxHarga = $('#maxHarga').val();
+        var minHarga = $('#minHarga').val();
+
+        var data = "maxHarga=" + maxHarga + "&";
+        data += "minHarga=" + minHarga + "&";
+        data += "urut=" + tipe;
+
+        console.log(data)
+
+        $("#listItem").load("{{ route('tempat-kost-item') }}", data);
+    });
+
+    $(".max-harga").keyup(function(){
+        $('#maxHarga').val($(this).val());
+        // console.log($('#maxHarga').val());
+    });
+
+    $(".min-harga").keyup(function(){
+        $('#minHarga').val($(this).val());
+        // console.log($('#minHarga').val());
     });
     
 </script>
