@@ -95,7 +95,7 @@ Mimi Kost | Tempat Kost
         <div id="listMobile" class="lg:bg-white p-2 rounded-lg max-w-full absolute bottom-0 lg:hidden lg:col-span-2">
 
             {{-- Gallery View --}}
-            <div id="listItem" class="flex gap-2 overflow-x-auto lg:grid lg:grid-cols-3 lg:gap-4">
+            <div id="listMobileItem" class="flex gap-2 overflow-x-auto lg:grid lg:grid-cols-3 lg:gap-4">
                 @include('user.tempatKostItem')
             </div>
         </div>
@@ -155,7 +155,12 @@ Mimi Kost | Tempat Kost
         $("#listItem").load("{{ route('tempat-kost-item') }}", data);
     });
 
-    // Script untuk sorting
+    // Script untuk Filter
+
+    // $( document ).ready(function() {
+    //     $("#listMobileItem").load("{{ route('tempat-kost-item') }}");
+    // });
+
     $('body').on('click', '#filter', function () {
         
         var tipe = $('#urutkan').val();
@@ -168,7 +173,7 @@ Mimi Kost | Tempat Kost
 
         console.log(data)
 
-        $("#listItem").load("{{ route('tempat-kost-item') }}", data);
+        $("#listItem, #listMobileItem").load("{{ route('tempat-kost-item') }}", data);
     });
 
     $(".max-harga").keyup(function(){
