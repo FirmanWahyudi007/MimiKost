@@ -16,6 +16,9 @@ return new class extends Migration
         Schema::create('lokasi_kosts', function (Blueprint $table) {
             $table->id();
             $table->string('lokasi_tempat');
+            $table->string('path_gambar');
+            $table->string('longitude');
+            $table->string('latitude');
             $table->timestamps();
         });
     }

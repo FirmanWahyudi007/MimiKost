@@ -19,19 +19,29 @@ class TempatKostController extends Controller
     {
         # code...
         $tempat = null;
-        return view('admin.tempat.create', compact('tempat'));
+        $type = 2;
+        return view('admin.tempat.create', compact('tempat','type'));
     }
 
     public function store(Request $request)
     {
         # code...
         $this->validate($request,[
-            'alamat' => 'required'
+            'street' => 'required',
+            'latitude' => 'required',
+            'longtitude' => 'required',
         ]);
-        // dd($request->all());
-        $tempat = new LokasiKost();
-        $tempat->lokasi_tempat = $request->alamat;
-        $tempat->save();
+        if(isset($request->file)){
+            $extension = $request->file->getClientOriginalExtension();
+            $imageName = time().rand(1,99).'.'.$extension;
+            $path = $request->file->storeAs('uploads', $imageName, 'public');
+            $tempat = new LokasiKost();
+            $tempat->lokasi_tempat = $request->street;
+            $tempat->latitude = $request->latitude;
+            $tempat->longitude = $request->longtitude;
+            $tempat->path_gambar = $path;
+            $tempat->save();
+        }
         return redirect()->route('tempat.index')->with('success','Data Telah Disimpan');
     }
 

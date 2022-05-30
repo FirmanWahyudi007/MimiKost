@@ -33,7 +33,8 @@ class KamarController extends Controller
         # code...
         $lokasi = LokasiKost::all();
         $kamar = null;
-        return view('admin.kamar.create', compact('kamar','lokasi'));
+        $type = 1;
+        return view('admin.kamar.create', compact('kamar','lokasi','type'));
     }
 
     public function store(Request $request)

@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.12.1/css/pro.min.css">
   <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css')}}">  
   <title>@yield('title')</title>
+  @yield('css-custom')
 </head>
 <body class="bg-gray-100">
 

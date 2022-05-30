@@ -12,6 +12,9 @@ class LokasiKost extends Model
     protected $PrimaryKey = 'id';
     protected $fillable = [
         'lokasi_tempat',
+        'path_gambar',
+        'longitude',
+        'latitude',
     ];
 
     public function kamarkost()
