@@ -134,9 +134,17 @@ Mimi Kost | Tempat Kost
         accessToken: 'your.mapbox.access.token'
     }).addTo(map);
     
-    L.marker([-8.1688563,113.7021772]).addTo(map);
-    L.marker([-8.1688563,113.7011772]).addTo(map);
-    L.marker([-8.1688563,113.7031772]).addTo(map);
+    var pins = {!! json_encode($pin_points->toArray()) !!};
+
+    console.log(pins);
+    
+    for (const item of pins){
+        console.log("lat: " + item['latitude'] + ", long: " + item['longitude']);
+        L.marker([item['latitude'], item['longitude']]).addTo(map);
+    }
+
+    // L.marker([-8.1688563,113.7011772]).addTo(map);
+    // L.marker([-8.1688563,113.7031772]).addTo(map);
 
     // Script untuk sorting
     $("#urutkan").on('change',function(){

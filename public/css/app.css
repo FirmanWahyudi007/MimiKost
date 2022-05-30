@@ -3219,6 +3219,9 @@ body[dir="rtl"] .checkbox:checked,
 .w-64 {
   width: 16rem;
 }
+.w-screen {
+  width: 100vw;
+}
 .w-1\/12 {
   width: 8.333333%;
 }

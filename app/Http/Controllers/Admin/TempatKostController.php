@@ -29,7 +29,7 @@ class TempatKostController extends Controller
         $this->validate($request,[
             'street' => 'required',
             'latitude' => 'required',
-            'longtitude' => 'required',
+            'longitude' => 'required',
         ]);
         if(isset($request->file)){
             $extension = $request->file->getClientOriginalExtension();
@@ -38,7 +38,7 @@ class TempatKostController extends Controller
             $tempat = new LokasiKost();
             $tempat->lokasi_tempat = $request->street;
             $tempat->latitude = $request->latitude;
-            $tempat->longitude = $request->longtitude;
+            $tempat->longitude = $request->longitude;
             $tempat->path_gambar = $path;
             $tempat->save();
         }

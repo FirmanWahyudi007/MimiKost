@@ -20,49 +20,12 @@ MimiKost - Tambah Tempat
 
     <!-- body -->
     <div class="card-body">
-        <div class="w-full max-w-xl">
+        <div class="w-full">
             <form class="px-8 pt-6 pb-8 mb-6" action="{{isset($tempat) ? route('tempat.update',$tempat->id) : route('tempat.store') }}" method="POST" enctype="multipart/form-data">
                 {!! csrf_field() !!}
                 {!! isset($tempat) ? method_field('PUT'):'' !!}
-                <div class="lg:col-span-3 h-screen static lg:sticky top-0 -z-10">
-                    <div id="map" class="h-full rounded-lg"></div>
-                </div>
-                <input type="hidden" name="id" value="{{ isset($tempat) ? $tempat->id : '' }}"> <br>
-                @if (count($errors) > 0)
-                <div class="alert alert-error">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-                @endif
-                <div class="mb-6">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="nama">
-                        Latitude
-                    </label>
-                    <input
-                        class="shadow border rounded w-full py-2 px-3 text-gray-700 focus:outline-none focus:shadow-outline @error('latitude') is-invalid @enderror"
-                        id="latitude" name="latitude" type="text" placeholder="Masukkan latitude kost" value="{{ isset($kamar) ? $kamar->latitude : Request::old('latitude') }}">
-                    @error('latitude')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
-                <div class="mb-6">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="nama">
-                        Longtitude
-                    </label>
-                    <input
-                        class="shadow border rounded w-full py-2 px-3 text-gray-700 focus:outline-none focus:shadow-outline @error('longitude') is-invalid @enderror"
-                        id="longitude" name="longitude" type="text" placeholder="Masukkan longitude kost" value="{{ isset($kamar) ? $kamar->longitude : Request::old('longtitude') }}">
-                    @error('longtitude')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
+
+                {{-- * Tempat alamat --}}
                 <div class="mb-6">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="nama">
                         Alamat
@@ -76,6 +39,54 @@ MimiKost - Tambah Tempat
                         </span>
                     @enderror
                 </div>
+
+                {{-- * Tempat peta --}}
+                <div class="lg:col-span-3 w-full h-96 static lg:sticky top-0 -z-10">
+                    <div id="map" class="h-full rounded-lg"></div>
+                </div>
+                <input type="hidden" name="id" value="{{ isset($tempat) ? $tempat->id : '' }}"> <br>
+                @if (count($errors) > 0)
+                <div class="alert alert-error">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
+
+                {{-- * Tempat latitude dan longitude --}}
+                {{-- TODO: Hidden setelah development --}}
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="nama">
+                        Latitude
+                    </label>
+                    <input
+                        class="shadow border rounded w-full py-2 px-3 text-gray-700 focus:outline-none focus:shadow-outline @error('latitude') is-invalid @enderror"
+                        id="latitude" name="latitude" type="text" placeholder="Masukkan latitude kost" value="{{ isset($kamar) ? $kamar->latitude : Request::old('latitude') }}">
+                    @error('latitude')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="nama">
+                        Longtitude
+                    </label>
+                    <input
+                        class="shadow border rounded w-full py-2 px-3 text-gray-700 focus:outline-none focus:shadow-outline @error('longitude') is-invalid @enderror"
+                        id="longitude" name="longitude" type="text" placeholder="Masukkan longitude kost" value="{{ isset($kamar) ? $kamar->longitude : Request::old('longtitude') }}">
+                    @error('longtitude')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+
+
+
                 <div class="mb-2">
                     @include('admin.kamar.upload')
                 </div>

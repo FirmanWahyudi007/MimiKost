@@ -17,7 +17,8 @@ class TempatKostController extends Controller
      */
     public function index(){
 
-        $tempatKosts = DB::table('lokasi_kosts')->select('lokasi_kosts.*', 
+        $tempatKosts = DB::table('lokasi_kosts')->select('lokasi_kosts.id', 
+            'lokasi_kosts.lokasi_tempat', 'lokasi_kosts.path_gambar', 
             DB::raw('(SELECT kamar_kosts.harga from kamar_kosts 
                 WHERE kamar_kosts.lokasi_kost_id = lokasi_kosts.id 
                 ORDER BY harga ASC LIMIT 1) as kamar_termurah'),
@@ -26,8 +27,16 @@ class TempatKostController extends Controller
                 ORDER BY harga DESC LIMIT 1) as kamar_termahal'),
             )->get();
 
+        $pin_points = LokasiKost::select(
+                'lokasi_kosts.id', 
+                'lokasi_kosts.latitude', 
+                'lokasi_kosts.longitude'
+            )
+            ->get();
+        
         return view('user.tempatKostMobile', [
             'tempatKosts' => $tempatKosts,
+            'pin_points' => $pin_points,
         ]);
     }
 
