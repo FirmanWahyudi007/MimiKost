@@ -124,7 +124,8 @@ Mimi Kost | Tempat Kost
 <script>
 
     // Script untuk maps
-    var map = L.map('map').setView([-8.1688563,113.7021772], 15);
+    var pins = {!! json_encode($pin_points->toArray()) !!};
+    var map = L.map('map').setView([pins[0]['latitude'], pins[0]['longitude']], 15);
 
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
         maxZoom: 18,
@@ -134,17 +135,14 @@ Mimi Kost | Tempat Kost
         accessToken: 'your.mapbox.access.token'
     }).addTo(map);
     
-    var pins = {!! json_encode($pin_points->toArray()) !!};
 
-    console.log(pins);
-    
     for (const item of pins){
+        // TODO: Hapus console log setelah development
         console.log("lat: " + item['latitude'] + ", long: " + item['longitude']);
-        L.marker([item['latitude'], item['longitude']]).addTo(map);
-    }
+        L.marker([item['latitude'], item['longitude']]).addTo(map)
+        .bindPopup('<a href="/tempat-kost/view/' + item['id'] + '"> <b>Lihat tempat</b> </a>');
 
-    // L.marker([-8.1688563,113.7011772]).addTo(map);
-    // L.marker([-8.1688563,113.7031772]).addTo(map);
+    }
 
     // Script untuk sorting
     $("#urutkan").on('change',function(){
