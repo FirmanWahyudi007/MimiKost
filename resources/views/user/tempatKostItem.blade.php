@@ -2,7 +2,7 @@
     @if (!empty($tempatKost->kamar_termurah) && !empty($tempatKost->kamar_termahal))
         <a href="{{ route('tempat-kost-view', $tempatKost->id) }}">
             <div class="card card-compact bg-base-100 shadow-sm" style="min-width: 180px">
-                <figure><img src="https://api.lorem.space/image/shoes?w=400&h=225" alt="Shoes" class="" />
+                <figure><img src="{{ asset('storage/'.$tempatKost->path_gambar)}}" alt="Shoes" class="" />
                 </figure>
                 <div class="card-body">
                     {{-- <h3 class="text-xs">Lorem Ipsum</h3> --}}

@@ -14,14 +14,11 @@ Mimi Kost | Alamat Tempat Kost
 <div class="container mx-auto ">
     {{-- Swiper & Jendela status--}}
     <div class="relative">
-        {{-- Swiper --}}
 
+        {{-- Swiper --}}
+        {{-- * Disini bisa banyak foto --}}
         <div id="swiper" class="bg-blue-200 m-4 h-[30vh] lg:h-[40vh]">
-            <div class="bg-center bg-cover" style="background-image: url(https://api.lorem.space/image/house);">
-            </div>
-            <div class="bg-center bg-cover" style="background-image: url(https://api.lorem.space/image/house);">
-            </div>
-            <div class="bg-center bg-cover" style="background-image: url(https://api.lorem.space/image/house);">
+            <div class="bg-center bg-cover" style="background-image: url('{{ asset('storage/'.$tempat->path_gambar)}}');">
             </div>
         </div>
 

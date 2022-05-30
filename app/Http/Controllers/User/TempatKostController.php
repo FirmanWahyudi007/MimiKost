@@ -57,6 +57,8 @@ class TempatKostController extends Controller
             $fasilitas_unique = array_unique(array_merge($fasilitas_unique, $item['fasilitas']));
         }
 
+        // return $tempat;
+
         return view('user.tempatKostView', [
             'tempat' => $tempat,
             'kamars' => $kamars,
