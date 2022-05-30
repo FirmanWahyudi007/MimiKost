@@ -34,6 +34,12 @@ class KamarKost extends Model
         return $this->hasMany(GambarKamar::class);
     }
 
+    public function gambarkamar()
+    {
+        # code...
+        return $this->hasOne(GambarKamar::class)->latestOfMany();
+    }
+
     /**
      * Set the fasilitas
      *

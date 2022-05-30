@@ -1,10 +1,12 @@
 <?php
 
-use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Admin\KamarController;
-use App\Http\Controllers\Admin\TempatKostController;
-use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Admin\KamarController;
+use App\Http\Controllers\User\KamarKostController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\TempatKostController;
+use App\Http\Controllers\User\TempatKostController as TempatKostUser;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,17 +25,11 @@ Route::get('/', function () {
     return view('user.home');
 })->name('home');
 
-Route::get('/tempat-kost', function () {
-    return view('user.tempatKostMobile');
-})->name('tempat-kost');
+Route::get('/tempat-kost', [TempatKostUser::class, 'index'])->name('tempat-kost');
+Route::get('/tempat-kost-item', [TempatKostUser::class, 'listFilter'])->name('tempat-kost-item');
+Route::get('/tempat-kost/view/{id}', [TempatKostUser::class, 'show'])->name('tempat-kost-view');
 
-Route::get('/tempat-kost/view', function () {
-    return view('user.tempatKostView');
-})->name('tempat-kost-view');
-
-Route::get('/kamar-kost', function () {
-    return view('user.KamarKost');
-})->name('kamar-kost');
+Route::get('/kamar-kost/{id}', [KamarKostController::class, 'index'])->name('kamar-kost');
 
 Route::get('/tentang', function () {
     return view('user.tentang');
@@ -44,9 +40,6 @@ Route::get('/kontak', function () {
 })->name('kontak');
 
 // Admin & Pemilik Kost Route
-
-    // Auth
-    // Route::resource('/login', LoginController::class);
 Route::prefix('admin')->middleware('auth')->group(function () {
 
     Route::resource('/', DashboardController::class);

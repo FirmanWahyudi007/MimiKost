@@ -28,7 +28,7 @@ Mimi Kost | Tempat Kost
             </svg>
         </label>
 
-        {{-- Filter Modal--}}
+        {{-- Filter Modal --}}
         <input type="checkbox" id="my-modal-3" class="modal-toggle">
         <div class="modal">
             <div class="modal-box">
@@ -42,7 +42,7 @@ Mimi Kost | Tempat Kost
         <div class="hidden lg:block lg:col-span-2">
 
             {{-- Filter Collapse --}}
-            <div tabindex="0" class="collapse collapse-arrow bg-white rounded-lg lg:col-span-2 mb-4">
+            <div tabindex="0" class="collapse collapse-open collapse-arrow bg-white rounded-lg lg:col-span-2 mb-4">
                 <input type="checkbox" class="peer" />
                 <div
                     class="collapse-title text-lg font-medium">
@@ -61,10 +61,10 @@ Mimi Kost | Tempat Kost
                     <div id="urut" class="flex gap-4 prose">
                         <p class="inline-block">Urut</p>
                         <div class="form-control">
-                            <select class="select select-bordered select-ghost select-sm">
+                            <select class="select select-bordered select-ghost select-sm" id="urutkan" name="urutkan">
                                 <option disabled selected>----</option>
-                                <option value="hargaAsc">Harga 🔝</option>
-                                <option value="hargaDesc">Harga ⬇️</option>
+                                <option value="DESC">Harga Termahal</option>
+                                <option value="ASC">Harga Termurah</option>
                             </select>
                         </div>
                     </div>
@@ -85,22 +85,26 @@ Mimi Kost | Tempat Kost
                 </div>
 
                 {{-- Gallery View --}}
-                <div id="list" class="flex gap-2 overflow-x-auto lg:grid lg:grid-cols-3 lg:gap-4 px-2">
+                <div id="listItem" class="flex gap-2 overflow-x-auto lg:grid lg:grid-cols-3 lg:gap-4 px-2">
                     @include('user.tempatKostItem')
                 </div>
             </div>
         </div>
 
         {{-- Mobile Item View --}}
-        <div id="list" class="lg:bg-white p-2 rounded-lg max-w-full absolute bottom-0 lg:hidden lg:col-span-2">
+        <div id="listMobile" class="lg:bg-white p-2 rounded-lg max-w-full absolute bottom-0 lg:hidden lg:col-span-2">
 
             {{-- Gallery View --}}
-            <div id="list" class="flex gap-2 overflow-x-auto lg:grid lg:grid-cols-3 lg:gap-4">
+            <div id="listMobileItem" class="flex gap-2 overflow-x-auto lg:grid lg:grid-cols-3 lg:gap-4">
                 @include('user.tempatKostItem')
             </div>
         </div>
 
     </div>
+
+    {{-- Tempat menyimpan value form filter --}}
+    <input type="hidden" placeholder="..." id="maxHarga"/>
+    <input type="hidden" placeholder="..." id="minHarga"/>
 
 </div>
 
@@ -115,7 +119,11 @@ Mimi Kost | Tempat Kost
     integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
     crossorigin=""></script>
 
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
 <script>
+
+    // Script untuk maps
     var map = L.map('map').setView([-8.1688563,113.7021772], 15);
 
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
@@ -129,6 +137,51 @@ Mimi Kost | Tempat Kost
     L.marker([-8.1688563,113.7021772]).addTo(map);
     L.marker([-8.1688563,113.7011772]).addTo(map);
     L.marker([-8.1688563,113.7031772]).addTo(map);
+
+    // Script untuk sorting
+    $("#urutkan").on('change',function(){
+
+        var tipe = $('#urutkan').val();
+        var maxHarga = $('#maxHarga').val();
+        var minHarga = $('#minHarga').val();
+
+        var data = "maxHarga=" + maxHarga + "&";
+        data += "minHarga=" + minHarga + "&";
+        data += "urut=" + tipe;
+
+        // var data = "tipe=" + tipe + "&";
+        // data += "sertifikasi=" + sertifikasi + "&";
+        // data += "region=" + region;
+
+        $("#listItem").load("{{ route('tempat-kost-item') }}", data);
+    });
+
+    // Script untuk Filter
+    $('body').on('click', '#filter', function () {
+        
+        var tipe = $('#urutkan').val();
+        var maxHarga = $('#maxHarga').val();
+        var minHarga = $('#minHarga').val();
+
+        var data = "maxHarga=" + maxHarga + "&";
+        data += "minHarga=" + minHarga + "&";
+        data += "urut=" + tipe;
+
+        console.log(data)
+
+        $("#listItem, #listMobileItem").load("{{ route('tempat-kost-item') }}", data);
+    });
+
+    $(".max-harga").keyup(function(){
+        $('#maxHarga').val($(this).val());
+        // console.log($('#maxHarga').val());
+    });
+
+    $(".min-harga").keyup(function(){
+        $('#minHarga').val($(this).val());
+        // console.log($('#minHarga').val());
+    });
+    
 </script>
 
 @endsection
