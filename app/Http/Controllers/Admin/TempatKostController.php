@@ -42,7 +42,9 @@ class TempatKostController extends Controller
             $tempat->path_gambar = $path;
             $tempat->save();
         }
+        // dd($request->all());
         return redirect()->route('tempat.index')->with('success','Data Telah Disimpan');
+
     }
 
     public function show($id)
@@ -56,10 +58,18 @@ class TempatKostController extends Controller
     public function update(Request $request)
     {
         # code...
-        $tempat = LokasiKost::find($request->id);
-        $tempat->lokasi_tempat = $request->alamat;
+        $tempat = LokasiKost::where('id', $request->id)->first();
+        $tempat->lokasi_tempat = $request->street;
+        $tempat->latitude = $request->latitude;
+        $tempat->longitude = $request->longitude;
+        if(isset($request->file)){
+            $extension = $request->file->getClientOriginalExtension();
+            $imageName = time().rand(1,99).'.'.$extension;
+            $path = $request->file->storeAs('uploads', $imageName, 'public');
+            $tempat->path_gambar = $path;
+        }
         $tempat->save();
-        return redirect()->route('tempat.index')->with('info','Data Telah Diubah');
+        return redirect()->route('tempat.index')->with('success','Data Telah Diubah');
     }
 
     public function destroy($id)
